@@ -20,7 +20,7 @@ def danger(user):
     cursor = database.cursor()
     userdata = cursor.execute("SELECT Users.id, Geolocalizations.latitude, Geolocalizations.longitude FROM Users INNER JOIN Geolocalizations ON Geolocalizations.id = Users.Geolocalizations_id").fetchone()
     userpos = Distance(str(userdata[1])+":"+str(userdata[2]))
-    events = cursor.execute("SELECT Events.id, Events.date, Events.name, Geolocalizations.latitude as latitude, Geolocalizations.longitude as longitude FROM Events INNER JOIN Geolocalizations ON Geolocalizations.id = Events.Geolocalization_id").fetchall()
+    events = cursor.execute("SELECT Events.id, Events.date, Events.name, Geolocalizations.latitude as latitude, Geolocalizations.longitude as longitude FROM Events INNER JOIN Geolocalizations ON Geolocalizations.id = Events.Geolocalizations_id").fetchall()
     results = []
     for event in events:
         #calcul de la distance entre l'emplacement de l'user et l'event
