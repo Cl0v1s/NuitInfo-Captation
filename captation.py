@@ -45,7 +45,7 @@ while 1:
             print terms[index][0] + " a "+str(occ)
             if(occ > limit):
                 #on lance la procedure de verification pour le term terms[index]
-                os.system("verification.py "+terms[index][0])
+                #os.system(u"verification.py "+terms[index][0])
                 pass
             index = index + 1
 
