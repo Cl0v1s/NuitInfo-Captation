@@ -1,0 +1,321 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="utf-8" />
+    <!--[if lte IE 8]><script src="views/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="views/assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="views/assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="views/assets/css/ie9.css" /><![endif]-->
+    <script type="text/javascript" src="lib/mustache.min.js"></script>
+    <script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+      var SERVER = "http://localhost:8080";
+    </script>
+    <style>
+      div#content>div
+      {
+        display: none;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <div id="center">
+      <div id="page-wrapper">
+
+  			<!-- Header -->
+  				<div id="header-wrapper">
+  					<div id="header" class="container">
+
+  						<!-- Logo -->
+  							<h1 id="logo"><a href="index.html">Captation</a></h1>
+
+  						<!-- Nav -->
+  						<nav id="nav">
+  							<ul>
+  								<li>
+  									<a href="#">Placeholder</a>
+  									<ul>
+  										<li><a href="usage.html">Utilisation de Captation</a></li>
+  										<li><a href="#">Prévention</a></li>
+  										<li>
+  											<a href="#">Catastrophes</a>
+  											<ul>
+  												<li><a href="#">Catastrophe X</a></li>
+  												<li><a href="#">Catastrophe Y</a></li>
+  												<li><a href="#">Catastrophe Z</a></li>
+  											</ul>
+  										</li>
+  										<li><a href="#">Liens utiles</a></li>
+  									</ul>
+  								</li>
+  								<li class="break"><a href="#">Placeholder</a></li>
+  							</ul>
+  						</nav>
+  					</div>
+            <section id="hero" class="container">
+							<header>
+								<h2> Allez-vous bien ?
+								</h2>
+							</header>
+							<p>Vous êtes signalé comme étant dans une zone à <strong>risques</strong>.</p>
+							<ul class="actions">
+								<!-- Lien vers  -->
+								<li><a id="event_yes" href="#" class="button">Oui</a></li>
+								<li><a id="event_no" href="#" class="button">Non</a></li>
+                <li id="event_input" class="button" style="display:none;">
+
+                    <input type="checkbox" value="danger"> En danger<br>
+                    <input type="checkbox" value="wounded"> Blessé<br>
+                    <input type="button" value="Envoyer">
+                </li>
+							</ul>
+						</section>
+
+
+
+
+  				</div>
+
+          <!-- Main -->
+    				<div class="wrapper">
+    					<div class="container" id="main">
+
+    						<!-- Content -->
+    							<article id="content" class="alerte">
+    								<header>
+    									<h2>Alerte catastrophe <span id="event_name"></span></h2>
+    									<p>Une catastrophe a eu lieu près de vous.</p>
+    								</header>
+    								<p>Ut sed tortor luctus, gravida nibh eget, volutpat odio. Proin rhoncus, sapien
+    								mollis luctus hendrerit, orci dui viverra metus, et cursus nulla mi sed elit. Vestibulum
+    								condimentum, mauris a mattis vestibulum, urna mauris cursus lorem, eu fringilla lacus
+    								ante non est. Nullam vitae feugiat libero, eu consequat sem. Proin tincidunt neque
+    								eros. Duis faucibus blandit ligula, mollis commodo risus sodales at. Sed rutrum et
+    								turpis vel blandit. Nullam ornare congue massa, at commodo nunc venenatis varius.
+    								Praesent mollis nisi at vestibulum aliquet. Sed sagittis congue urna ac consectetur.</p>
+    							</article>
+
+    						<div class="row features">
+    							<section class="4u 12u(narrower) feature">
+    								<div class="image-wrapper first">
+    									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+    								</div>
+    								<header>
+    									<h3>Discussion instantanée</h3>
+    								</header>
+    								<p>Venez discuter avec d'autres personnes touchées par cet évènement.</p>
+    								<ul class="actions">
+    									<li><a href="#" class="button">Rejoindre le chat</a></li>
+    								</ul>
+    							</section>
+    						</div>
+    					</div>
+    				</div>
+
+          <div id="footer-wrapper">
+            <div id="footer" class="container">
+              <header class="major">
+                <h2>Vous êtes une organisation ?</h2>
+                <p>Vous voulez nous contacter car notre application vous intéresse, et vous souhaitez y contribuer ?<br>
+                  Ecrivez-nous !
+                </p>
+              </header>
+              <div class="row">
+                <section class="6u 12u(narrower)">
+                  <form method="post" action="#">
+                    <div class="row 50%">
+                      <div class="6u 12u(mobile)">
+                        <input name="name" placeholder="Nom" type="text" />
+                      </div>
+                      <div class="6u 12u(mobile)">
+                        <input name="email" placeholder="Email" type="text" />
+                      </div>
+                    </div>
+                    <div class="row 50%">
+                      <div class="12u">
+                        <textarea name="message" placeholder="Message"></textarea>
+                      </div>
+                    </div>
+                    <div class="row 50%">
+                      <div class="12u">
+                        <ul class="actions">
+                          <li><input type="submit" value="Envoyer" /></li>
+                          <li><input type="reset" value="Effacer" /></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </form>
+                </section>
+                <section class="6u 12u(narrower)">
+                  <div class="row 0%">
+                    <ul class="divided icons 6u 12u(mobile)">
+                      <li class="icon fa-twitter"><a href="#"><span class="extra">twitter.com/</span>CF8MSPEH</a></li>
+                      <li class="icon fa-facebook"><a href="#"><span class="extra">facebook.com</span></a></li>
+                    </ul>
+                    <ul class="divided icons 6u 12u(mobile)">
+                      <li class="icon fa-youtube"><a href="#"><span class="extra">youtube.com/</span>untitled</a></li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <div id="copyright" class="container">
+              <ul class="menu">
+                <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+        <div id="usage">
+      	<div id="page-wrapper">
+
+      			<!-- Header -->
+      				<div id="header-wrapper">
+      					<div id="header" class="container">
+
+      						<!-- Logo -->
+      							<h1 id="logo"><a href="index.html">Captation</a></h1>
+
+      						<!-- Nav -->
+      						<nav id="nav">
+      							<ul>
+      								<li>
+      									<a href="#">Placeholder</a>
+      									<ul>
+      										<li><a href="usage.html">Utilisation de Captation</a></li>
+      										<li><a href="#">Prévention</a></li>
+      										<li>
+      											<a href="#">Catastrophes</a>
+      											<ul>
+      												<li><a href="#">Catastrophe X</a></li>
+      												<li><a href="#">Catastrophe Y</a></li>
+      												<li><a href="#">Catastrophe Z</a></li>
+      											</ul>
+      										</li>
+      										<li><a href="#">Liens utiles</a></li>
+      									</ul>
+      								</li>
+      								<li class="break"><a href="#">Placeholder</a></li>
+      							</ul>
+      						</nav>
+
+                  <!-- Annonce -->
+                    <section id="hero" class="container">
+                      <header>
+                        <h2> Utilisation de Captation
+                        </h2>
+                      </header>
+                      <p>Un service d'aide à la gestions de <strong>crises</strong>.</p>
+                    </section>
+      					</div>
+      				</div>
+
+              <!-- Main -->
+        				<div class="wrapper">
+        					<div class="container" id="main">
+
+        						<!-- Content -->
+        							<article id="content" class="alerte">
+        								<header>
+        									<h2>Captation, <strong>pour qui ?</strong></h2>
+        									<p>Acteurs et cibles d'une crise.</p>
+        								</header>
+        								<p>Captation est destinée aux cibles d'une crise et aux acteurs de sa gestion.</p>
+        							</article>
+
+                      <article id="content" class="alerte">
+        								<header>
+        									<h2>Captation, <strong>pourquoi ?</strong></h2>
+        									<p>Gérer ou prévenir une crise.</p>
+        								</header>
+        								<p>Cette application a plusieurs objetifs.<br>
+                          <strong>Premier objectif :</strong><br>
+                          Informer les cibles potentielles d'une crise de l'existence de cette dernière
+                        s'ils n'en ont pas eu connaissance jusqu'ici.<br>
+                          <strong>Second objectif :</strong><br>
+                        Recenser les victimes de ces crises afin d'en informer les organisations.<br>
+                        <strong>Troisième objectif :</strong><br>
+                        Permettre aux victimes d'une même crise d'échanger entre elles.
+                        </p>
+        							</article>
+                      <article id="content" class="alerte">
+        								<header>
+        									<h2>Captation, <strong>comment ?</strong></h2>
+        									<p>Affluences de diffusion sur les réseaux sociaux.</p>
+        								</header>
+        								<p>Cette application a plusieurs objetifs.<br>
+                        </p>
+        							</article>
+        					</div>
+        				</div>
+
+              <div id="footer-wrapper">
+                <div id="footer" class="container">
+                  <header class="major">
+                    <h2>Vous êtes une organisation ?</h2>
+                    <p>Vous voulez nous contacter car notre application vous intéresse, et vous souhaitez y contribuer ?<br>
+                      Ecrivez-nous !
+                    </p>
+                  </header>
+                  <div class="row">
+                    <section class="6u 12u(narrower)">
+                      <form method="post" action="#">
+                        <div class="row 50%">
+                          <div class="6u 12u(mobile)">
+                            <input name="name" placeholder="Nom" type="text" />
+                          </div>
+                          <div class="6u 12u(mobile)">
+                            <input name="email" placeholder="Email" type="text" />
+                          </div>
+                        </div>
+                        <div class="row 50%">
+                          <div class="12u">
+                            <textarea name="message" placeholder="Message"></textarea>
+                          </div>
+                        </div>
+                        <div class="row 50%">
+                          <div class="12u">
+                            <ul class="actions">
+                              <li><input type="submit" value="Envoyer" /></li>
+                              <li><input type="reset" value="Effacer" /></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </form>
+                    </section>
+                    <section class="6u 12u(narrower)">
+                      <div class="row 0%">
+                        <ul class="divided icons 6u 12u(mobile)">
+                          <li class="icon fa-twitter"><a href="#"><span class="extra">twitter.com/</span>CF8MSPEH</a></li>
+                          <li class="icon fa-facebook"><a href="#"><span class="extra">facebook.com</span></a></li>
+                        </ul>
+                        <ul class="divided icons 6u 12u(mobile)">
+                          <li class="icon fa-youtube"><a href="#"><span class="extra">youtube.com/</span>untitled</a></li>
+                        </ul>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+                <div id="copyright" class="container">
+                  <ul class="menu">
+                    <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="controller/base.js"></script>
+  </body>
+</html>
