@@ -1,0 +1,111 @@
+<script type="text/javascript">
+
+document.onkeydown = function(event) {
+     var keyPressed;
+     if(event == null){
+          keyPressed = window.event.keyCode;
+     }
+     else {
+          keyPressed = event.keyCode;
+     }
+     switch(keyPressed){
+          case 37:
+               left=true;
+               break;
+          case 38:
+               up=true;
+               break;
+          case 39:
+               right=true;
+               break;
+          case 40:
+               down=true;
+               break;
+     }
+}
+
+document.onkeyup = function(event) {
+     var keyPressed;
+     if(event == null){
+          keyPressed = window.event.keyCode;
+     }
+     else {
+          keyPressed = event.keyCode;
+     }
+     switch(keyPressed){
+          case 37:
+               left=false;
+               break;
+          case 38:
+               up=false;
+               break;
+          case 39:
+               right=false;
+               break;
+          case 40:
+               down=false;
+               break;
+     }
+}
+
+var context;
+
+var size = 500;
+
+var width = 10;
+var height = 10;
+
+var x = width*2;
+var y = size/2 - height/2;
+
+var x_speed=10;
+var y_speed=10;
+
+var left=false;
+var right=false;
+var up=false;
+var down=false;
+
+
+function on_enter_frame(){
+
+	context=game_area.getContext('2d');
+	context.clearRect(0,0,500,500);
+	context.beginPath();
+	context.fillStyle="#000000";
+	context.arc(x, y, width, 0, Math.PI*2,true);
+	context.closePath();
+	context.fill();
+
+  if(left && (x - width>0)) {
+     x -= x_speed;
+  }
+  if(right && (x + width < size)) {
+     x += x_speed;
+  }
+  if(up && (y - height > 0)) {
+     y-= y_speed;
+  }
+  if(down && (y + height < size)) {
+     y += y_speed;
+  }
+}
+
+setInterval(on_enter_frame,30);
+
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+#game_area{
+     background-color:#f5f5f5;
+     border:1px solid #e5e5e5;
+}
+</style>
+</head>
+<body>
+     <canvas id="game_area" width="500" height="500"></canvas>
+</body>
+</html>

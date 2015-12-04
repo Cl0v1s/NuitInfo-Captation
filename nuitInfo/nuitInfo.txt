@@ -1,0 +1,25 @@
+- Conseils
+- Intégrer le jeu sur le site (design)
+
+Shoot Them Up en rapport avec le sujet
+
+Joueur : utilisateur, bonhomme (citoyen lambda)
+
+Tirs : oiseaux Twitter (représentent la diffusion de l'information)
+
+Secondaire --> L'organisation apparaît sur l'écran. Si on envoie un tweet dessus, ça envoie une multitude de tweets
+
+Ennemis : tsunamis, catastrophes naturelles (ou causes, genre réchauffement climatique, CO2)
+- Tsunamis
+- Séismes
+- Ouragans
+- Inondation
+- Eruption volcanique
+- Pandémie
+
+Bonus :
+- Vaccins
+- Aide humanitaire
+- 
+
+Quand on gagne, un conseil (conduite à adopter en cas d'urgence, par exemple)
