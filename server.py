@@ -34,8 +34,33 @@ def danger(user):
                     break
             if found == False:
                 results.append(event)
-
+    database.close()
     return dict(events = results)
 
+@route("/response/<user>/<value>")
+def response(user, value):
+    database = sqlite3.connect('bdd.db')
+    cursor = database.cursor()
+    request = "UPDATE Users SET "
+    if value == "wounded":
+        request = request + "is_wounded"
+    elif value == "danger":
+        request = request + "is_in_danger"
+    request = request + " = '1' WHERE Users.id = '"+user+"'"
+    print request
+    cursor.execute(request)
+    database.commit()
+    database.close()
+    return dict(state = "ok")
+
+@route("/victims")
+def victims():
+    database = sqlite3.connect('bdd.db')
+    cursor = database.cursor()
+    users  = cursor.execute("SELECT Users.is_in_danger, Users.is_wounded, Geolocalizations.latitude, Geolocalizations.longitude FROM Users INNER JOIN Geolocalizations ON Geolocalizations.id  = Users.Geolocalizations_id WHERE Users.is_wounded = '1' OR Users.is_in_danger = '1' ").fetchall()
+    results = []
+    for user in users:
+        results.append(dict(is_in_danger = user[0], is_wounded = user[1], latitude = user[2], longitude = user[3]))
+    return dict(results = results)
 
 run(host='localhost', port=8080, reloader = True)
